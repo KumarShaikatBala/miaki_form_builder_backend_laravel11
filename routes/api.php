@@ -15,4 +15,4 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('logout', 'logout')->middleware(['auth:sanctum']);
     Route::get('profile', 'profile')->middleware(['auth:sanctum']);
 });
-Route::apiResource('forms', FormController::class);
+Route::apiResource('forms', FormController::class)->middleware(['auth:sanctum', 'admin']);

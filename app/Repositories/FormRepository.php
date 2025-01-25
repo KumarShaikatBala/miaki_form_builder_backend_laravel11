@@ -17,7 +17,7 @@ class FormRepository implements FormRepositoryInterface
 
     public function getAllForms()
     {
-        $forms = FormResource::collection(Form::with('fields')->paginate(10));
+        $forms = FormResource::collection(Form::select('id','title')->latest()->paginate(10));
         return $this->success(['data' => $forms->response()
             ->getData(true)
 
