@@ -21,7 +21,7 @@ class FormRepository implements FormRepositoryInterface
         return $this->success(['data' => $forms->response()
             ->getData(true)
 
-        ], 'Orders found.', 200);
+        ], 'Forms found.', 200);
     }
 
     public function createForm(array $data)
